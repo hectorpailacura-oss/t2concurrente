@@ -37,7 +37,15 @@ Random random ;
 			
 		}
 		
-		
+		public void gane(Winner2 s){
+			if (this.distancia>= s.getDistancia()) {
+				s.setDistancia(this.distancia);
+				s.setNombre(this.nombre);
+				
+			}
+			
+			
+		}
 		
 	
 

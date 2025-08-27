@@ -6,8 +6,10 @@ public class Carrera {
 	Thread [] hilos = new Thread[3];
 	Corredor [] corredores=new Corredor[3];
      int i;
-	Winner ganador=new Winner(corredores);
-     Corredor corredor;
+	
+    Winner2 resultado=new Winner2();
+    Winner ganador=new Winner(corredores,resultado);
+    Corredor corredor;
      
      for ( i=0; i < corredores.length;i++) {
 		
@@ -25,18 +27,21 @@ public class Carrera {
 		
 		try {
 			hilos[i-1].join();
+			i--;
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		i--;
+	
 		
 	}
-	corredor=ganador.winner();
+	System.out.println("............................................");
+	
+	ganador.winner();
 	
 	System.out.println("la carrera termino.............................................");
 	
-	System.out.println("El ganador es .............."+"  "+corredor.getNombres()+"......."+corredor.distancia);
+	System.out.println("El ganador es .............."+ resultado.nombre+"........."+ resultado.distancia);
 	
 	}
 

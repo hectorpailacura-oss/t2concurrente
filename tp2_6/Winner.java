@@ -2,25 +2,25 @@ package tp2_6;
 
 public class Winner {
 	Corredor [] mi;
-Winner(Corredor[] corredores) {
+Winner2 m;
 	
+Winner(Corredor[] corredores,Winner2 m) {
+	this.m=m;
 	mi=corredores;
 	
 	
 	
 }
-public Corredor winner() {
+public void  winner() {
 	int cantididad=mi.length;
-	Corredor ganador=mi[0];
-	for(int i=1;i< mi.length;i++) {
-		
-		if(ganador.getDistancia()<mi[i].getDistancia()) {
-			ganador=mi[i];
-			}
+	//Corredor ganador=mi[0];
+	for(int i=0;i< mi.length;i++) {
+		System.out.println(i);
+		 mi[i].gane(this.m);
 		
 		}
 	
-	return ganador;
+	
 	
 }
 
